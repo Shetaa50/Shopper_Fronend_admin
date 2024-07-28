@@ -5,7 +5,7 @@ import { useState } from "react";
 const Listproducts = () => {
     const [allproducts,setAllproducts] = useState([])
     const fetchinfo = async()=>{
-        await fetch('http://localhost:4000/allproducts')
+        await fetch('https://shopper-backend-nine.vercel.app/allproducts')
         .then((resp)=>resp.json())
         .then((data)=>{setAllproducts(data)}) ;
     }
@@ -14,7 +14,7 @@ const Listproducts = () => {
     },[])
 
     const removeproduct = async(id)=>{
-        await fetch('http://localhost:4000/removeproduct',{
+        await fetch('https://shopper-backend-nine.vercel.app/removeproduct',{
             method:'POST',
             headers:{
                 Accept:"application/json",

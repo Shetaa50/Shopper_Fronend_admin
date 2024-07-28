@@ -24,17 +24,9 @@ const Addproducts = () => {
         let product = productDetails;
         let formdata = new FormData();
         formdata.append("product",image)
-        await fetch('http://localhost:4000/upload',{
-            method:'POST',
-            headers:{
-                Accept:"application/json",
-            },
-            body:formdata,
-        }).then((resp)=>resp.json()).then((data)=>{responseData=data});
-        if(responseData.success){
-            product.image = responseData.image_url;
-            console.log(product);
-            await fetch('http://localhost:4000/addproduct',{
+
+        if(image){
+            await fetch('https://shopper-backend-nine.vercel.app/addproduct',{
                 method:'POST',
                 headers:{
                     Accept:"application/json",

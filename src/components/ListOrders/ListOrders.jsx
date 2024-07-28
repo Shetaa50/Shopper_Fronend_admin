@@ -7,7 +7,7 @@ const ListOrders = () => {
 
     const fetchInfo = async () => {
         try {
-            const response = await fetch('http://localhost:4000/alluserscartdata');
+            const response = await fetch('https://shopper-backend-nine.vercel.app/alluserscartdata');
             const data = await response.json();
             setAllOrders(data);
         } catch (error) {
